@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
@@ -22,12 +22,12 @@ html {
 }
 
 .container {
-  background-color: #F8D4C4;
+  background-color: #f8d4c4;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  max-width: 800px; 
-  margin: 0 auto; 
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .todo-title {
@@ -46,17 +46,17 @@ html {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%; 
+  width: 100%;
 }
 
 #new-todo {
   flex: 1;
   padding: 0.5rem 1rem;
-  border: 1px solid #794B30;
+  border: 1px solid #794b30;
   border-radius: 4px;
   margin-right: 1rem;
   outline: none;
-  background-color: #F8D4C4;
+  background-color: #f8d4c4;
   color: #360500;
 }
 
@@ -79,11 +79,11 @@ html {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 100%; 
+  width: 100%;
 }
 
 .todo-item {
-  background-color: #F8D4C4;
+  background-color: #f8d4c4;
   padding: 1rem;
   border-radius: 8px;
   display: flex;
@@ -115,4 +115,33 @@ html {
 .todo-item.completed span {
   text-decoration: line-through;
   color: #360500;
+}
+
+.search {
+  margin: 20px 20px 40px 20px;
+  padding: 10px;
+  border: 1px solid #f8d4c4;
+  border-radius: 20px;
+  gap: 20px;
+  box-shadow: 0 2px 5px #f8d4c4;
+  background-color: #f8d4c4;
+  align-items: center;
+  display: none;
+}
+
+#input-search:focus {
+  border-color: #f8d4c4;
+}
+
+.search.active {
+  display: flex;
+}
+
+#input-search {
+  color: #f8d4c4;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 300;
+  display: flex;
+  width: 100%;
 }
