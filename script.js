@@ -43,6 +43,7 @@ function atualizarLista() {
     
     const excluirButton = document.createElement("button");
     excluirButton.textContent = "Excluir";
+    excluirButton.style.marginLeft = "5px"
     excluirButton.addEventListener("click", () => {
       tarefas.splice(index, 1);
       atualizarLista();
@@ -66,7 +67,7 @@ function atualizarLista() {
     item.appendChild(texto);
     buttonContainer.appendChild(alterarButton);
     buttonContainer.appendChild(excluirButton);
-    item.appendChild(excluirButton);
+    item.appendChild(buttonContainer);
     
     lista.appendChild(item);
   });
