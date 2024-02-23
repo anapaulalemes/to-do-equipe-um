@@ -94,12 +94,10 @@ function alterarTarefa(index, novoTexto) {
 
 function activeSearch() {
   const buttonSearch = document.querySelector(".button-search");
-  const inputSearch = document.getElementById("input-search");
-  const search = document.querySelector(".search");
+  const inputSearch = document.getElementById("input-search");    
+  const search = document.querySelector(".todo-search");
 
-  buttonSearch.addEventListener("click", () => {
-    search.classList.toggle("active");
-  });
+  buttonSearch.addEventListener("click", handleSearchButtonClick);
 
   inputSearch.addEventListener("focus", () => {
     search.style.borderColor = "var(--color-5)";
@@ -111,7 +109,7 @@ function activeSearch() {
 
   inputSearch.addEventListener("keyup", () => {
     let taskSearch = inputSearch.value.toLowerCase();
-    let tasksList = document.querySelectorAll("#to-do-list li");
+    let tasksList = document.querySelectorAll("#todo-list li");
 
     tasksList.forEach((task) => {
       if (task.innerText.toLowerCase().includes(taskSearch)) {
@@ -120,6 +118,57 @@ function activeSearch() {
         task.style.display = "none";
       }
     });
+  }); 
+
+  buttonSearch.addEventListener("click", function() {
+      handleSearchButtonClick(inputSearch);
   });
-}
-activeSearch();
+  activeSearch();
+
+  function handleSearchButtonClick() {
+      let searchVisible = search.classList.contains('show');
+  
+      if (searchVisible) {
+          search.classList.remove('show');
+      } else {
+          search.classList.add('show');
+          document.getElementById('input-search').focus();
+      }
+  }
+
+  document.getElementById('button-search').addEventListener('click', handleSearchButtonClick);
+  handleSearchButtonClick();
+} 
+
+function setupSearchButton() {
+const searchButton = document.getElementById('button-search');
+const searchContainer = document.getElementById('searchContainer');
+
+if (searchButton && searchContainer) {
+    searchButton.addEventListener('click', function() {
+        searchContainer.classList.toggle('show');
+        if (searchContainer.classList.contains('show')) {
+            document.getElementById('input-search').focus();
+        }
+    });
+}}
+document.addEventListener('DOMContentLoaded', setupSearchButton);
+
+document.addEventListener('DOMContentLoaded', function() {
+  function searchTodoList() {
+    document.getElementById('input-search').addEventListener('input', function() {
+      let inputText = this.value;
+      let todoList = document.getElementById('todo-list');
+      let items = todoList.getElementsByTagName('div');
+      for (let i = 0; i < items.length; i++) {
+        let itemText = items[i].textContent || items[i].innerText;
+        if (itemText.includes(inputText)) {
+          items[i].style.display = "";
+        } else {
+          items[i].style.display = "none";
+        }
+      }
+    });
+  }
+  searchTodoList();
+});
