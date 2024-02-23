@@ -66,3 +66,12 @@ atualizarLista();
 window.addEventListener("beforeunload", () => {
   localStorage.setItem("tarefas", JSON.stringify(tarefas));
 });
+
+function alterarTarefa(index, novoTexto) {
+  if (novoTexto.trim() !== "") { // Verifica se o novo texto não está vazio ou apenas espaços em branco
+    tarefas[index].texto = novoTexto; // Atualiza o texto da tarefa com o novo texto
+    atualizarLista(); // Atualiza a lista de tarefas na tela
+  } else {
+    alert("Insira um texto válido para a tarefa!"); // Alerta se o novo texto estiver vazio
+  }
+}
