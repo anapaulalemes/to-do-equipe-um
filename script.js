@@ -37,6 +37,9 @@ function atualizarLista() {
     
     const texto = document.createElement("span");
     texto.textContent = tarefa.texto;
+
+    const buttonContainer = document.createElement("div"); // Container para os botões
+    buttonContainer.classList.add("button-container");
     
     const excluirButton = document.createElement("button");
     excluirButton.textContent = "Excluir";
@@ -45,12 +48,24 @@ function atualizarLista() {
       atualizarLista();
     });
 
+    const alterarButton = document.createElement("button");
+    alterarButton.textContent = "Alterar";
+    alterarButton.addEventListener("click", () => {
+      const novoTexto = prompt("Digite o novo texto da tarefa:");
+      if (novoTexto !== null) {
+        alterarTarefa(index, novoTexto); 
+      }
+    });
+
+
     if (tarefa.completada) {
         item.classList.add("completed");
       }
     
     item.appendChild(checkbox);
     item.appendChild(texto);
+    buttonContainer.appendChild(alterarButton);
+    buttonContainer.appendChild(excluirButton);
     item.appendChild(excluirButton);
     
     lista.appendChild(item);
