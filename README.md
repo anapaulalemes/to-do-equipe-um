@@ -1,8 +1,8 @@
 <h1>To-Do-List - Santander Coders 2023.2 #1120 - Equipe um<h1>
 
-<p>Este projeto é composto por uma página,  sendo construída com Css, Html e JavaScript. A página emula o site de uma lista de tarefa, em que o usuário pode adicionar, editar, pesquisa e remover tarefas. O design é original e foi construído pela equipe.<p>
+<p>Este projeto é composto por uma página,  sendo construída com Css, Html e JavaScript. A página emula o site de uma lista de tarefa, em que o usuário pode adicionar, editar, pesquisa,remover e selecionar tarefas. O design é original e foi construído pela equipe.</p>
 
-<p>Feito em grupo para entrega do módulo de JavaScript, com os participantes Ana Paula, Evandro, Kaue e Nataly.<p>
+<p>Feito em grupo para entrega do módulo de JavaScript, com os participantes Ana Paula, Evander, Kaue e Nataly.<p>
 
 <h2>Autores<h2>
 
